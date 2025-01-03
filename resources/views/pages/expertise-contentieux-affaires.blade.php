@@ -1,191 +1,185 @@
-@extends('layouts.main')
-
-@section('title', 'Contentieux des affaires - Kottin&Co')
+@extends('layouts.app')
 
 @section('content')
     <!-- Hero Section -->
-    <section class="relative bg-[#1B2A4A] py-32 mt-20">
-        <div class="absolute inset-0">
-            <div class="relative aspect-[16/9] md:aspect-[21/9]">
-                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070" 
-                     alt="Contentieux des affaires" 
-                     class="absolute inset-0 w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/50"></div>
-            </div>
-        </div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <h3 class="text-beige mb-4 text-lg">Notre Expertise</h3>
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                    Contentieux des affaires
-                </h1>
-                <p class="text-xl text-gray-300">
-                    Une expertise pointue dans la gestion et la résolution des litiges commerciaux
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contentieux Commercial -->
-    <section class="py-20 mt-20">
+    <div class="bg-primary/10 py-20 mt-20">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">Contentieux Commercial</h2>
-                    <p class="text-gray-600 mb-8">
-                        Une expertise approfondie dans la résolution des litiges commerciaux complexes.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold mb-2">Rupture de relations commerciales</h4>
-                                <p class="text-gray-600">Gestion des litiges liés à la rupture brutale des relations d'affaires</p>
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">Contentieux des affaires</h1>
+              
+            </div>
+        </div>
+    </div>
+
+    <!-- Missions Section -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contentieux Commercial -->
+                    <div class="bg-white rounded-3xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mr-4">
+                                <i class="fas fa-briefcase text-2xl text-primary"></i>
                             </div>
+                            <h3 class="text-2xl font-medium text-primary">Contentieux commercial</h3>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
+                        <div class="space-y-6">
                             <div>
-                                <h4 class="font-semibold mb-2">Contentieux contractuel</h4>
-                                <p class="text-gray-600">Résolution des litiges liés à l'exécution des contrats commerciaux</p>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Litiges contractuels</h4>
+                                <p class="text-gray-600">Gestion des litiges liés à l'exécution, l'interprétation ou la rupture des contrats commerciaux.</p>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
                             <div>
-                                <h4 class="font-semibold mb-2">Recouvrement de créances</h4>
-                                <p class="text-gray-600">Mise en œuvre des procédures de recouvrement efficaces</p>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Contentieux de la distribution</h4>
+                                <p class="text-gray-600">Résolution des conflits dans les réseaux de distribution, franchise et concession commerciale.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Relations commerciales</h4>
+                                <p class="text-gray-600">Gestion des litiges liés à la rupture brutale des relations commerciales établies.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Concurrence déloyale</h4>
+                                <p class="text-gray-600">Actions en justice contre les pratiques de concurrence déloyale et le parasitisme commercial.</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="relative h-[500px] rounded-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071" 
-                         alt="Contentieux commercial" 
-                         class="absolute inset-0 w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contentieux Sociétaire -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="relative h-[500px] rounded-lg overflow-hidden order-2 lg:order-1">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069" 
-                         alt="Contentieux sociétaire" 
-                         class="absolute inset-0 w-full h-full object-cover">
-                </div>
-                <div class="order-1 lg:order-2">
-                    <h2 class="text-3xl font-bold mb-6">Contentieux Sociétaire</h2>
-                    <p class="text-gray-600 mb-8">
-                        Une expertise dans la résolution des conflits entre associés et actionnaires.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold mb-2">Conflits entre associés</h4>
-                                <p class="text-gray-600">Gestion des différends relatifs à la gouvernance et au contrôle</p>
+                    <!-- Contentieux Sociétaire -->
+                    <div class="bg-white rounded-3xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mr-4">
+                                <i class="fas fa-users text-2xl text-primary"></i>
                             </div>
+                            <h3 class="text-2xl font-medium text-primary">Contentieux sociétaire</h3>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
+                        <div class="space-y-6">
                             <div>
-                                <h4 class="font-semibold mb-2">Responsabilité des dirigeants</h4>
-                                <p class="text-gray-600">Défense des intérêts des dirigeants mis en cause</p>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Conflits entre associés</h4>
+                                <p class="text-gray-600">Résolution des différends entre actionnaires ou associés, abus de majorité ou de minorité.</p>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
                             <div>
-                                <h4 class="font-semibold mb-2">Contentieux post-acquisition</h4>
-                                <p class="text-gray-600">Résolution des litiges suite aux opérations de M&A</p>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Contentieux post-acquisition</h4>
+                                <p class="text-gray-600">Gestion des litiges suite aux opérations de fusion-acquisition, notamment sur les garanties de passif.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Responsabilité des dirigeants</h4>
+                                <p class="text-gray-600">Actions en responsabilité contre les dirigeants sociaux et mandataires sociaux.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Contentieux des assemblées</h4>
+                                <p class="text-gray-600">Contestation des décisions d'assemblées générales et des résolutions sociales.</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Procédures d'Urgence -->
-    <section class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">Procédures d'Urgence</h2>
-                    <p class="text-gray-600 mb-8">
-                        Une réactivité maximale dans les situations nécessitant une intervention rapide.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold mb-2">Référés</h4>
-                                <p class="text-gray-600">Obtention de mesures provisoires ou conservatoires</p>
+                    <!-- Contentieux Bancaire -->
+                    <div class="bg-white rounded-3xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mr-4">
+                                <i class="fas fa-university text-2xl text-primary"></i>
                             </div>
+                            <h3 class="text-2xl font-medium text-primary">Contentieux bancaire</h3>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
+                        <div class="space-y-6">
                             <div>
-                                <h4 class="font-semibold mb-2">Saisies conservatoires</h4>
-                                <p class="text-gray-600">Mise en œuvre des mesures de sauvegarde des droits</p>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Litiges financiers</h4>
+                                <p class="text-gray-600">Contentieux relatifs aux instruments financiers, produits bancaires et opérations de marché.</p>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
                             <div>
-                                <h4 class="font-semibold mb-2">Ordonnances sur requête</h4>
-                                <p class="text-gray-600">Obtention de mesures non contradictoires</p>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Responsabilité bancaire</h4>
+                                <p class="text-gray-600">Actions en responsabilité contre les établissements bancaires pour manquement à leurs obligations.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Contentieux du crédit</h4>
+                                <p class="text-gray-600">Litiges liés aux opérations de crédit, aux garanties bancaires et au recouvrement.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Contentieux réglementaire</h4>
+                                <p class="text-gray-600">Assistance dans les procédures devant les autorités de régulation (AMF, ACPR).</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="relative h-[500px] rounded-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070" 
-                         alt="Procédures d'urgence" 
-                         class="absolute inset-0 w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Modes Alternatifs -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="relative h-[500px] rounded-lg overflow-hidden order-2 lg:order-1">
-                    <img src="https://images.unsplash.com/photo-1453906971074-ce568cccbc63?q=80&w=2070" 
-                         alt="Modes alternatifs" 
-                         class="absolute inset-0 w-full h-full object-cover">
-                </div>
-                <div class="order-1 lg:order-2">
-                    <h2 class="text-3xl font-bold mb-6">Modes Alternatifs de Résolution des Conflits</h2>
-                    <p class="text-gray-600 mb-8">
-                        Une expertise dans la recherche de solutions négociées.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
+                    <!-- Procédures d'Urgence -->
+                    <div class="bg-white rounded-3xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mr-4">
+                                <i class="fas fa-bolt text-2xl text-primary"></i>
+                            </div>
+                            <h3 class="text-2xl font-medium text-primary">Procédures d'urgence</h3>
+                        </div>
+                        <div class="space-y-6">
                             <div>
-                                <h4 class="font-semibold mb-2">Médiation</h4>
-                                <p class="text-gray-600">Accompagnement dans la recherche d'accords amiables</p>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Référés</h4>
+                                <p class="text-gray-600">Obtention de mesures d'urgence pour préserver les droits des parties.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Mesures conservatoires</h4>
+                                <p class="text-gray-600">Mise en œuvre de saisies conservatoires et de sûretés judiciaires.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Procédures sur requête</h4>
+                                <p class="text-gray-600">Obtention d'autorisations judiciaires pour des mesures non contradictoires.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Voies d'exécution</h4>
+                                <p class="text-gray-600">Mise en œuvre des procédures d'exécution forcée et de recouvrement.</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
+                    </div>
+
+                    <!-- Modes Alternatifs -->
+                    <div class="bg-white rounded-3xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mr-4">
+                                <i class="fas fa-handshake text-2xl text-primary"></i>
+                            </div>
+                            <h3 class="text-2xl font-medium text-primary">Modes alternatifs</h3>
+                        </div>
+                        <div class="space-y-6">
                             <div>
-                                <h4 class="font-semibold mb-2">Arbitrage</h4>
-                                <p class="text-gray-600">Représentation devant les tribunaux arbitraux</p>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Arbitrage</h4>
+                                <p class="text-gray-600">Représentation dans les procédures d'arbitrage national et international.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Médiation</h4>
+                                <p class="text-gray-600">Accompagnement dans les processus de médiation commerciale.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Négociation</h4>
+                                <p class="text-gray-600">Assistance dans la négociation de protocoles transactionnels.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Procédure participative</h4>
+                                <p class="text-gray-600">Mise en œuvre de procédures participatives de résolution des conflits.</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-beige mt-1 mr-3"></i>
+                    </div>
+
+                    <!-- Contentieux de la Concurrence -->
+                    <div class="bg-white rounded-3xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mr-4">
+                                <i class="fas fa-balance-scale text-2xl text-primary"></i>
+                            </div>
+                            <h3 class="text-2xl font-medium text-primary">Contentieux concurrentiel</h3>
+                        </div>
+                        <div class="space-y-6">
                             <div>
-                                <h4 class="font-semibold mb-2">Négociation</h4>
-                                <p class="text-gray-600">Recherche de solutions transactionnelles</p>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Pratiques anticoncurrentielles</h4>
+                                <p class="text-gray-600">Défense dans les procédures relatives aux ententes et abus de position dominante.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Pratiques restrictives</h4>
+                                <p class="text-gray-600">Contentieux liés aux pratiques commerciales restrictives et déséquilibrées.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Actions en dommages</h4>
+                                <p class="text-gray-600">Actions en réparation suite aux pratiques anticoncurrentielles.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-800 mb-3">Procédures d'enquête</h4>
+                                <p class="text-gray-600">Assistance lors des enquêtes de l'Autorité de la concurrence.</p>
                             </div>
                         </div>
                     </div>
@@ -194,18 +188,13 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="py-20 bg-[#1B2A4A]">
+    <!-- Contact Section -->
+    <section class="bg-primary py-16">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-                    Vous Faites Face à un Litige ?
-                </h2>
-                <p class="text-xl text-gray-300 mb-8">
-                    Contactez-nous pour une analyse approfondie de votre situation et des solutions adaptées.
-                </p>
-                <a href="{{ route('contact') }}" 
-                   class="inline-block bg-beige text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all">
+                <h2 class="text-3xl md:text-4xl font-light text-white mb-6">Besoin d'un accompagnement juridique ?</h2>
+                <p class="text-xl text-gray-300 mb-8">Contactez-nous pour une consultation personnalisée</p>
+                <a href="{{ route('contact') }}" class="inline-block bg-beige text-white px-8 py-4 rounded-xl text-lg font-medium hover:bg-opacity-90 transition-all">
                     Prendre Rendez-vous
                 </a>
             </div>

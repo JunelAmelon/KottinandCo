@@ -85,7 +85,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="{{ route('home') }}" class="text-white font-medium hover:text-beige transition-colors">Accueil</a>
                     <a href="{{ route('about') }}" class="text-white font-medium hover:text-beige transition-colors">À propos</a>
-                    <a href="#services" class="text-white font-medium hover:text-beige transition-colors">Services</a>
+                    <a href="#services" class="text-white font-medium hover:text-beige transition-colors">Notre expertise</a>
                     <a href="{{ route('blog') }}" class="text-white font-medium hover:text-beige transition-colors">Blog</a>
                     <a href="{{ route('contact') }}" class="text-white font-medium hover:text-beige transition-colors">Contact</a>
                 </div>
@@ -123,7 +123,7 @@
                         <div class="space-y-8">
                             <a href="{{ route('home') }}" class="mobile-menu-link block text-3xl font-semibold text-white hover:text-beige transform hover:translate-x-2 transition-all duration-300">Accueil</a>
                             <a href="{{ route('about') }}" class="mobile-menu-link block text-3xl font-semibold text-white hover:text-beige transform hover:translate-x-2 transition-all duration-300">À propos</a>
-                            <a href="#services" class="mobile-menu-link block text-3xl font-semibold text-white hover:text-beige transform hover:translate-x-2 transition-all duration-300">Services</a>
+                            <a href="#services" class="mobile-menu-link block text-3xl font-semibold text-white hover:text-beige transform hover:translate-x-2 transition-all duration-300">Notre expertise</a>
                             <a href="{{ route('blog') }}" class="mobile-menu-link block text-3xl font-semibold text-white hover:text-beige transform hover:translate-x-2 transition-all duration-300">Blog</a>
                             <a href="{{ route('contact') }}" class="mobile-menu-link block text-3xl font-semibold text-white hover:text-beige transform hover:translate-x-2 transition-all duration-300">Contact</a>
                         </div>
@@ -204,7 +204,7 @@
                     <!-- Stats Section -->
                     <div class="grid grid-cols-3 gap-8 py-8 border-t border-b border-gray-200">
                         <div class="text-center">
-                            <span class="block text-4xl font-bold text-primary mb-2">15+</span>
+                            <span class="block text-4xl font-bold text-primary mb-2">5+</span>
                             <span class="text-gray-600 text-sm">Années d'Expérience</span>
                         </div>
                         <div class="text-center">

@@ -52,18 +52,18 @@
             <!-- Quick Links -->
             <div class="col-span-1">
                 <h3 class="text-xl font-medium mb-6">Liens rapides</h3>
-                <ul class="space-y-4">
-                    <li><a href="{{ route('home') }}" class="text-gray-300 hover:text-beige text-sm transition-colors">Accueil</a></li>
-                    <li><a href="{{ route('about') }}" class="text-gray-300 hover:text-beige text-sm transition-colors">À propos</a></li>
-                    <li><a href="#services" class="text-gray-300 hover:text-beige text-sm transition-colors">Services</a></li>
-                    <li><a href="{{ route('blog') }}" class="text-gray-300 hover:text-beige text-sm transition-colors">Blog</a></li>
-                    <li><a href="{{ route('contact') }}" class="text-gray-300 hover:text-beige text-sm transition-colors">Contact</a></li>
+                <ul class="space-y-2">
+                    <li><a href="{{ route('home') }}" class="text-gray-300 hover:text-beige transition-colors">Accueil</a></li>
+                    <li><a href="{{ route('about') }}" class="text-gray-300 hover:text-beige transition-colors">À propos</a></li>
+                    <li><a href="{{ route('expertise.droit-affaires') }}" class="text-gray-300 hover:text-beige transition-colors">Notre expertise</a></li>
+                    <li><a href="{{ route('blog') }}" class="text-gray-300 hover:text-beige transition-colors">Blog</a></li>
+                    <li><a href="{{ route('contact') }}" class="text-gray-300 hover:text-beige transition-colors">Contact</a></li>
                 </ul>
             </div>
 
             <!-- Services -->
             <div class="col-span-1">
-                <h3 class="text-xl font-medium mb-6">Services</h3>
+                <h3 class="text-xl font-medium mb-6">Notre expertise</h3>
                 <ul class="space-y-4">
                     <li><a href="#" class="text-gray-300 hover:text-beige text-sm transition-colors">Droit des affaires</a></li>
                     <li><a href="#" class="text-gray-300 hover:text-beige text-sm transition-colors">Droit international</a></li>

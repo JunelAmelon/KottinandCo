@@ -12,7 +12,7 @@
             <div class="hidden md:flex items-center space-x-8">
                 <a href="{{ route('home') }}" class="text-white font-medium hover:text-beige transition-colors">Accueil</a>
                 <a href="{{ route('about') }}" class="text-white font-medium hover:text-beige transition-colors">À propos</a>
-                <a href="{{ request()->routeIs('home') ? '#services' : route('home') . '#services' }}" class="text-white font-medium hover:text-beige transition-colors">Services</a>
+                <a href="{{ route('expertise.droit-affaires') }}" class="text-white font-medium hover:text-beige transition-colors">Notre expertise</a>
                 <a href="{{ route('blog') }}" class="text-white font-medium hover:text-beige transition-colors">Blog</a>
                 <a href="{{ route('contact') }}" class="text-white font-medium hover:text-beige transition-colors">Contact</a>
             </div>
@@ -39,7 +39,7 @@
                 <div class="flex flex-col space-y-6">
                     <a href="{{ route('home') }}" class="text-white text-xl hover:text-beige transition-colors">Accueil</a>
                     <a href="{{ route('about') }}" class="text-white text-xl hover:text-beige transition-colors">À propos</a>
-                    <a href="{{ request()->routeIs('home') ? '#services' : route('home') . '#services' }}" class="text-white text-xl hover:text-beige transition-colors">Services</a>
+                    <a href="{{ route('expertise.droit-affaires') }}" class="text-white text-xl hover:text-beige transition-colors">Notre expertise</a>
                     <a href="{{ route('blog') }}" class="text-white text-xl hover:text-beige transition-colors">Blog</a>
                     <a href="{{ route('contact') }}" class="text-white text-xl hover:text-beige transition-colors">Contact</a>
                 </div>

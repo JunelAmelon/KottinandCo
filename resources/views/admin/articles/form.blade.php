@@ -57,71 +57,112 @@
 @endpush
 
 @section('content')
-<div class="bg-white rounded-lg shadow-sm">
-    <form method="POST" 
-          action="{{ isset($article) ? route('admin.articles.update', $article->id) : route('admin.articles.store') }}" 
-          class="p-6">
-        @csrf
-        @if(isset($article))
-            @method('PUT')
-        @endif
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h1 class="text-2xl font-light text-gray-800 mb-6">
+                {{ isset($article) ? 'Modifier l\'article' : 'Nouvel article' }}
+            </h1>
 
-        <!-- Title -->
-        <div class="mb-6">
-            <label for="title" class="block text-sm font-medium text-gray-700 mb-1">Titre</label>
-            <input type="text" 
-                   name="title" 
-                   id="title" 
-                   class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" 
-                   value="{{ old('title', $article->title ?? '') }}" 
-                   required>
-            @error('title')
-                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-            @enderror
-        </div>
+            <form action="{{ isset($article) ? route('admin.articles.update', $article) : route('admin.articles.store') }}" 
+                  method="POST" 
+                  enctype="multipart/form-data">
+                @csrf
+                @if(isset($article))
+                    @method('PUT')
+                @endif
 
-        <!-- Excerpt -->
-        <div class="mb-6">
-            <label for="excerpt" class="block text-sm font-medium text-gray-700 mb-1">Extrait</label>
-            <textarea name="excerpt" 
-                      id="excerpt" 
-                      class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" 
-                      rows="3" 
-                      required>{{ old('excerpt', $article->excerpt ?? '') }}</textarea>
-            @error('excerpt')
-                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-            @enderror
-        </div>
+                <div class="space-y-6">
+                    <!-- Titre -->
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-gray-700 mb-1">Titre</label>
+                        <input type="text" 
+                               name="title" 
+                               id="title" 
+                               value="{{ old('title', $article->title ?? '') }}"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-beige focus:border-beige @error('title') border-red-500 @enderror">
+                        @error('title')
+                            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-        <!-- Content -->
-        <div class="mb-6">
-            <label for="content" class="block text-sm font-medium text-gray-700 mb-1">Contenu</label>
-            <textarea name="content" 
-                      id="content" 
-                      class="w-full">{{ old('content', $article->content ?? '') }}</textarea>
-            @error('content')
-                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-            @enderror
-        </div>
+                    <!-- Catégorie -->
+                    <div>
+                        <label for="category_id" class="block text-sm font-medium text-gray-700 mb-1">Catégorie</label>
+                        <select name="category_id" 
+                                id="category_id" 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-beige focus:border-beige @error('category_id') border-red-500 @enderror">
+                            <option value="">Sélectionnez une catégorie</option>
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}" 
+                                        {{ old('category_id', $article->category_id ?? '') == $category->id ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('category_id')
+                            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-        <!-- Is Published -->
-        <div class="mb-6">
-            <label class="inline-flex items-center">
-                <input type="checkbox" 
-                       name="is_published" 
-                       class="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" 
-                       {{ old('is_published', $article->is_published ?? false) ? 'checked' : '' }}>
-                <span class="ml-2">Publier l'article</span>
-            </label>
-        </div>
+                    <!-- Extrait -->
+                    <div>
+                        <label for="excerpt" class="block text-sm font-medium text-gray-700 mb-1">Extrait</label>
+                        <textarea name="excerpt" 
+                                  id="excerpt" 
+                                  rows="3" 
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-beige focus:border-beige @error('excerpt') border-red-500 @enderror">{{ old('excerpt', $article->excerpt ?? '') }}</textarea>
+                        @error('excerpt')
+                            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-        <!-- Submit Button -->
-        <div class="flex justify-end">
-            <button type="submit" 
-                    class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                {{ isset($article) ? 'Mettre à jour' : 'Créer' }}
-            </button>
+                    <!-- Contenu -->
+                    <div>
+                        <label for="content" class="block text-sm font-medium text-gray-700 mb-1">Contenu</label>
+                        <textarea name="content" 
+                                  id="content" 
+                                  rows="10" 
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-beige focus:border-beige @error('content') border-red-500 @enderror">{{ old('content', $article->content ?? '') }}</textarea>
+                        @error('content')
+                            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <!-- Image -->
+                    <div>
+                        <label for="featured_image" class="block text-sm font-medium text-gray-700 mb-1">Image à la une</label>
+                        <input type="file" 
+                               name="featured_image" 
+                               id="featured_image"
+                               accept="image/*"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-beige focus:border-beige @error('featured_image') border-red-500 @enderror">
+                        @error('featured_image')
+                            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                        @if(isset($article) && $article->featured_image)
+                            <div class="mt-2">
+                                <img src="{{ Storage::url($article->featured_image) }}" 
+                                     alt="Image actuelle" 
+                                     class="w-32 h-32 object-cover rounded">
+                            </div>
+                        @endif
+                    </div>
+
+                    <!-- Boutons -->
+                    <div class="flex justify-end space-x-4 pt-4">
+                        <a href="{{ route('admin.articles.index') }}" 
+                           class="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
+                            Annuler
+                        </a>
+                        <button type="submit" 
+                                class="px-6 py-2 bg-beige text-white rounded-md hover:bg-opacity-90 transition-colors">
+                            {{ isset($article) ? 'Mettre à jour' : 'Enregistrer' }}
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
 @endsection

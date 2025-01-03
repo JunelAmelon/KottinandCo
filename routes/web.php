@@ -17,6 +17,26 @@ Route::get('/a-propos', function () {
     return view('pages.about');
 })->name('about');
 
+Route::get('/cabinet', function () {
+    return view('pages.cabinet');
+})->name('cabinet');
+
+Route::get('/equipe', function () {
+    return view('pages.equipe');
+})->name('equipe');
+
+Route::get('/expertise', function () {
+    return view('pages.expertise');
+})->name('expertise');
+
+Route::get('/actualites', function () {
+    return view('pages.actualites');
+})->name('actualites');
+
+Route::get('/nous-rejoindre', function () {
+    return view('pages.join');
+})->name('join');
+
 Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
@@ -61,12 +81,11 @@ Route::middleware('auth')->group(function () {
 });
 
 // Routes d'administration
-Route::group(['middleware' => ['web', 'auth', \App\Http\Middleware\AdminMiddleware::class]], function () {
-    Route::prefix('admin')->name('admin.')->group(function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        Route::resource('articles', ArticleController::class);
-        Route::post('upload/image', [UploadController::class, 'image'])->name('upload.image');
-    });
+Route::middleware(['auth', \App\Http\Middleware\AdminMiddleware::class])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('articles', ArticleController::class);
+    Route::post('articles/{article}/toggle-publish', [ArticleController::class, 'togglePublish'])->name('articles.toggle-publish');
+    Route::post('upload/image', [UploadController::class, 'image'])->name('upload.image');
 });
 
 require __DIR__.'/auth.php';
